@@ -1,0 +1,1270 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "AgencyProto Mac Debug Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"Mac",
+				"Debug",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto Mac Debug Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"Mac",
+				"Debug",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"AgencyProto Mac Debug Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto Mac Debug Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"Mac",
+				"Debug",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto Mac DebugGame Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"Mac",
+				"DebugGame",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto Mac DebugGame Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"Mac",
+				"DebugGame",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"AgencyProto Mac DebugGame Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto Mac DebugGame Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"Mac",
+				"DebugGame",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto Mac Development Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"Mac",
+				"Development",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto Mac Development Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"Mac",
+				"Development",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"AgencyProto Mac Development Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto Mac Development Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"Mac",
+				"Development",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto Mac Shipping Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"Mac",
+				"Shipping",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto Mac Shipping Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"Mac",
+				"Shipping",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"AgencyProto Mac Shipping Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto Mac Shipping Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"Mac",
+				"Shipping",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto Mac Test Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"Mac",
+				"Test",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto Mac Test Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"Mac",
+				"Test",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"AgencyProto Mac Test Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto Mac Test Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"Mac",
+				"Test",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto IOS Debug Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"IOS",
+				"Debug",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto IOS Debug Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"IOS",
+				"Debug",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"AgencyProto IOS Debug Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto IOS Debug Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"IOS",
+				"Debug",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto IOS DebugGame Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"IOS",
+				"DebugGame",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto IOS DebugGame Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"IOS",
+				"DebugGame",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"AgencyProto IOS DebugGame Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto IOS DebugGame Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"IOS",
+				"DebugGame",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto IOS Development Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"IOS",
+				"Development",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto IOS Development Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"IOS",
+				"Development",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"AgencyProto IOS Development Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto IOS Development Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"IOS",
+				"Development",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto IOS Shipping Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"IOS",
+				"Shipping",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto IOS Shipping Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"IOS",
+				"Shipping",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"AgencyProto IOS Shipping Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto IOS Shipping Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"IOS",
+				"Shipping",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto IOS Test Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"IOS",
+				"Test",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto IOS Test Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"IOS",
+				"Test",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"AgencyProto IOS Test Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto IOS Test Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"IOS",
+				"Test",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto HTML5 Debug Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"HTML5",
+				"Debug",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto HTML5 Debug Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"HTML5",
+				"Debug",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"AgencyProto HTML5 Debug Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto HTML5 Debug Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"HTML5",
+				"Debug",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto HTML5 DebugGame Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"HTML5",
+				"DebugGame",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto HTML5 DebugGame Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"HTML5",
+				"DebugGame",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"AgencyProto HTML5 DebugGame Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto HTML5 DebugGame Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"HTML5",
+				"DebugGame",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto HTML5 Development Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"HTML5",
+				"Development",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto HTML5 Development Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"HTML5",
+				"Development",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"AgencyProto HTML5 Development Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto HTML5 Development Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"HTML5",
+				"Development",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto HTML5 Shipping Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"HTML5",
+				"Shipping",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto HTML5 Shipping Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"HTML5",
+				"Shipping",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"AgencyProto HTML5 Shipping Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto HTML5 Shipping Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"HTML5",
+				"Shipping",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto HTML5 Test Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"HTML5",
+				"Test",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto HTML5 Test Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"HTML5",
+				"Test",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"AgencyProto HTML5 Test Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto HTML5 Test Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"HTML5",
+				"Test",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto TVOS Debug Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"TVOS",
+				"Debug",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto TVOS Debug Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"TVOS",
+				"Debug",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"AgencyProto TVOS Debug Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto TVOS Debug Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"TVOS",
+				"Debug",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto TVOS DebugGame Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"TVOS",
+				"DebugGame",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto TVOS DebugGame Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"TVOS",
+				"DebugGame",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"AgencyProto TVOS DebugGame Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto TVOS DebugGame Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"TVOS",
+				"DebugGame",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto TVOS Development Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"TVOS",
+				"Development",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto TVOS Development Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"TVOS",
+				"Development",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"AgencyProto TVOS Development Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto TVOS Development Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"TVOS",
+				"Development",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto TVOS Shipping Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"TVOS",
+				"Shipping",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto TVOS Shipping Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"TVOS",
+				"Shipping",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"AgencyProto TVOS Shipping Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto TVOS Shipping Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"TVOS",
+				"Shipping",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto TVOS Test Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"TVOS",
+				"Test",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto TVOS Test Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"TVOS",
+				"Test",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"AgencyProto TVOS Test Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProto TVOS Test Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProto",
+				"TVOS",
+				"Test",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProtoEditor Mac Debug Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProtoEditor",
+				"Mac",
+				"Debug",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProtoEditor Mac Debug Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProtoEditor",
+				"Mac",
+				"Debug",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"AgencyProtoEditor Mac Debug Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProtoEditor Mac Debug Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProtoEditor",
+				"Mac",
+				"Debug",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProtoEditor Mac DebugGame Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProtoEditor",
+				"Mac",
+				"DebugGame",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProtoEditor Mac DebugGame Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProtoEditor",
+				"Mac",
+				"DebugGame",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"AgencyProtoEditor Mac DebugGame Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProtoEditor Mac DebugGame Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProtoEditor",
+				"Mac",
+				"DebugGame",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProtoEditor Mac Development Build",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProtoEditor",
+				"Mac",
+				"Development",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProtoEditor Mac Development Rebuild",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProtoEditor",
+				"Mac",
+				"Development",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex"
+			],
+			"problemMatcher": "$msCompile",
+			"dependsOn": [
+				"AgencyProtoEditor Mac Development Clean"
+			],
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		},
+		{
+			"label": "AgencyProtoEditor Mac Development Clean",
+			"group": "build",
+			"command": "Engine/Build/BatchFiles/Mac/Build.sh",
+			"args": [
+				"AgencyProtoEditor",
+				"Mac",
+				"Development",
+				"/Documents/Unreal Projects/AgencyPT/AgencyProto/AgencyProto.uproject",
+				"-waitmutex",
+				"-clean"
+			],
+			"problemMatcher": "$msCompile",
+			"type": "shell",
+			"options": {
+				"cwd": "/Users/Shared/Epic Games/UE_4.23"
+			}
+		}
+	]
+}

@@ -1,0 +1,7 @@
+{
+	"files.exclude": {
+		"/Documents/Unreal Projects/AgencyPT/AgencyProto/.vscode": true,
+		"/Documents/Unreal Projects/AgencyPT/AgencyProto/Content": true,
+		"/Documents/Unreal Projects/AgencyPT/AgencyProto/Intermediate": true
+	}
+}
