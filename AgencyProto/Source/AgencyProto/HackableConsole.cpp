@@ -59,3 +59,13 @@ void AHackableConsole::OnOverlapBeginHackArea(UPrimitiveComponent* OverlappedCom
     //TODO: verify character
     HackActive = true;
 }
+
+void AHackableConsole::OnOverlapEndHackArea(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+    HackActive = false;
+}
+
+void AHackableConsole::OnOverlapEndHackStart(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+    
+}
