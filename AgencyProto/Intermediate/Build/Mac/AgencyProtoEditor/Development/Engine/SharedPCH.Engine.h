@@ -1,4 +1,4 @@
-// PCH for /Users/Shared/Epic Games/UE_4.23/Engine/Source/Runtime/Engine/Public/EngineSharedPCH.h
+// PCH for /Users/Shared/EpicGames/UE_4.23/Engine/Source/Runtime/Engine/Public/EngineSharedPCH.h
 #define IS_PROGRAM 0
 #define UE_EDITOR 1
 #define HAS_METAL 1
@@ -364,4 +364,4 @@
 #define KISMET_API DLLIMPORT
 #define CLOTHINGSYSTEMRUNTIMEINTERFACE_VTABLE DLLIMPORT_VTABLE
 #define CLOTHINGSYSTEMRUNTIMEINTERFACE_API DLLIMPORT
-#include "/Users/Shared/Epic Games/UE_4.23/Engine/Source/Runtime/Engine/Public/EngineSharedPCH.h"
+#include "/Users/Shared/EpicGames/UE_4.23/Engine/Source/Runtime/Engine/Public/EngineSharedPCH.h"
