@@ -30,7 +30,9 @@ public:
     UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
     float HackTimePercentage = 0.0f;
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
-    FString InteractText = "Press T to start Hacking";
+    FString InteractText = "Press T to Start Hacking";
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    FString InteractintText = "Hacking";
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
     bool HackStarted = false;   //hack has been started
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
