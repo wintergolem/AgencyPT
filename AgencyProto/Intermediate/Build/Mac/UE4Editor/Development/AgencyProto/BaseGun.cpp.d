@@ -2443,4 +2443,11 @@
   /Documents/Unreal\ Projects/AgencyPT/AgencyProto/Source/AgencyProto/BaseGun.cpp \
   /Documents/Unreal\ Projects/AgencyPT/AgencyProto/Intermediate/Build/Mac/UE4Editor/Development/AgencyProto/Definitions.AgencyProto.h \
   /Documents/Unreal\ Projects/AgencyPT/AgencyProto/Source/AgencyProto/BaseGun.h \
-  /Documents/Unreal\ Projects/AgencyPT/AgencyProto/Intermediate/Build/Mac/UE4Editor/Inc/AgencyProto/BaseGun.generated.h
+  /Users/Shared/EpicGames/UE_4.23/Engine/Source/Runtime/Engine/Classes/Camera/CameraComponent.h \
+  /Users/Shared/EpicGames/UE_4.23/Engine/Intermediate/Build/Mac/UE4Editor/Inc/Engine/CameraComponent.generated.h \
+  /Users/Shared/EpicGames/UE_4.23/Engine/Source/Runtime/Engine/Classes/GameFramework/Character.h \
+  /Users/Shared/EpicGames/UE_4.23/Engine/Source/Runtime/Engine/Classes/GameFramework/RootMotionSource.h \
+  /Users/Shared/EpicGames/UE_4.23/Engine/Intermediate/Build/Mac/UE4Editor/Inc/Engine/RootMotionSource.generated.h \
+  /Users/Shared/EpicGames/UE_4.23/Engine/Intermediate/Build/Mac/UE4Editor/Inc/Engine/Character.generated.h \
+  /Documents/Unreal\ Projects/AgencyPT/AgencyProto/Intermediate/Build/Mac/UE4Editor/Inc/AgencyProto/BaseGun.generated.h \
+  /Users/Shared/EpicGames/UE_4.23/Engine/Source/Runtime/Engine/Public/DrawDebugHelpers.h

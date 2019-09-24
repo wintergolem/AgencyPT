@@ -13,82 +13,109 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define AGENCYPROTO_BaseGun_generated_h
 
-#define AgencyProto_Source_AgencyProto_BaseGun_h_12_GENERATED_BODY \
+#define AgencyProto_Source_AgencyProto_BaseGun_h_32_GENERATED_BODY \
+	friend struct Z_Construct_UScriptStruct_FShotVariableWeighted_Statics; \
+	AGENCYPROTO_API static class UScriptStruct* StaticStruct();
+
+
+template<> AGENCYPROTO_API UScriptStruct* StaticStruct<struct FShotVariableWeighted>();
+
+#define AgencyProto_Source_AgencyProto_BaseGun_h_17_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FAmmoBagStruct_Statics; \
 	AGENCYPROTO_API static class UScriptStruct* StaticStruct();
 
 
 template<> AGENCYPROTO_API UScriptStruct* StaticStruct<struct FAmmoBagStruct>();
 
-#define AgencyProto_Source_AgencyProto_BaseGun_h_27_RPC_WRAPPERS
-#define AgencyProto_Source_AgencyProto_BaseGun_h_27_RPC_WRAPPERS_NO_PURE_DECLS
-#define AgencyProto_Source_AgencyProto_BaseGun_h_27_INCLASS_NO_PURE_DECLS \
+#define AgencyProto_Source_AgencyProto_BaseGun_h_43_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execTriggerPull) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->TriggerPull(); \
+		P_NATIVE_END; \
+	}
+
+
+#define AgencyProto_Source_AgencyProto_BaseGun_h_43_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execTriggerPull) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->TriggerPull(); \
+		P_NATIVE_END; \
+	}
+
+
+#define AgencyProto_Source_AgencyProto_BaseGun_h_43_INCLASS_NO_PURE_DECLS \
 private: \
-	static void StaticRegisterNativesUBaseGun(); \
-	friend struct Z_Construct_UClass_UBaseGun_Statics; \
+	static void StaticRegisterNativesABaseGun(); \
+	friend struct Z_Construct_UClass_ABaseGun_Statics; \
 public: \
-	DECLARE_CLASS(UBaseGun, UActorComponent, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/AgencyProto"), NO_API) \
-	DECLARE_SERIALIZER(UBaseGun)
+	DECLARE_CLASS(ABaseGun, AActor, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/AgencyProto"), NO_API) \
+	DECLARE_SERIALIZER(ABaseGun)
 
 
-#define AgencyProto_Source_AgencyProto_BaseGun_h_27_INCLASS \
+#define AgencyProto_Source_AgencyProto_BaseGun_h_43_INCLASS \
 private: \
-	static void StaticRegisterNativesUBaseGun(); \
-	friend struct Z_Construct_UClass_UBaseGun_Statics; \
+	static void StaticRegisterNativesABaseGun(); \
+	friend struct Z_Construct_UClass_ABaseGun_Statics; \
 public: \
-	DECLARE_CLASS(UBaseGun, UActorComponent, COMPILED_IN_FLAGS(0 | CLASS_Config), CASTCLASS_None, TEXT("/Script/AgencyProto"), NO_API) \
-	DECLARE_SERIALIZER(UBaseGun)
+	DECLARE_CLASS(ABaseGun, AActor, COMPILED_IN_FLAGS(0), CASTCLASS_None, TEXT("/Script/AgencyProto"), NO_API) \
+	DECLARE_SERIALIZER(ABaseGun)
 
 
-#define AgencyProto_Source_AgencyProto_BaseGun_h_27_STANDARD_CONSTRUCTORS \
+#define AgencyProto_Source_AgencyProto_BaseGun_h_43_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API UBaseGun(const FObjectInitializer& ObjectInitializer); \
-	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UBaseGun) \
-	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UBaseGun); \
-DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UBaseGun); \
+	NO_API ABaseGun(const FObjectInitializer& ObjectInitializer); \
+	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ABaseGun) \
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, ABaseGun); \
+DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ABaseGun); \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
-	NO_API UBaseGun(UBaseGun&&); \
-	NO_API UBaseGun(const UBaseGun&); \
+	NO_API ABaseGun(ABaseGun&&); \
+	NO_API ABaseGun(const ABaseGun&); \
 public:
 
 
-#define AgencyProto_Source_AgencyProto_BaseGun_h_27_ENHANCED_CONSTRUCTORS \
+#define AgencyProto_Source_AgencyProto_BaseGun_h_43_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
-	NO_API UBaseGun(UBaseGun&&); \
-	NO_API UBaseGun(const UBaseGun&); \
+	NO_API ABaseGun(ABaseGun&&); \
+	NO_API ABaseGun(const ABaseGun&); \
 public: \
-	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, UBaseGun); \
-DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UBaseGun); \
-	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UBaseGun)
+	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, ABaseGun); \
+DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ABaseGun); \
+	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ABaseGun)
 
 
-#define AgencyProto_Source_AgencyProto_BaseGun_h_27_PRIVATE_PROPERTY_OFFSET
-#define AgencyProto_Source_AgencyProto_BaseGun_h_24_PROLOG
-#define AgencyProto_Source_AgencyProto_BaseGun_h_27_GENERATED_BODY_LEGACY \
+#define AgencyProto_Source_AgencyProto_BaseGun_h_43_PRIVATE_PROPERTY_OFFSET
+#define AgencyProto_Source_AgencyProto_BaseGun_h_40_PROLOG
+#define AgencyProto_Source_AgencyProto_BaseGun_h_43_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	AgencyProto_Source_AgencyProto_BaseGun_h_27_PRIVATE_PROPERTY_OFFSET \
-	AgencyProto_Source_AgencyProto_BaseGun_h_27_RPC_WRAPPERS \
-	AgencyProto_Source_AgencyProto_BaseGun_h_27_INCLASS \
-	AgencyProto_Source_AgencyProto_BaseGun_h_27_STANDARD_CONSTRUCTORS \
+	AgencyProto_Source_AgencyProto_BaseGun_h_43_PRIVATE_PROPERTY_OFFSET \
+	AgencyProto_Source_AgencyProto_BaseGun_h_43_RPC_WRAPPERS \
+	AgencyProto_Source_AgencyProto_BaseGun_h_43_INCLASS \
+	AgencyProto_Source_AgencyProto_BaseGun_h_43_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define AgencyProto_Source_AgencyProto_BaseGun_h_27_GENERATED_BODY \
+#define AgencyProto_Source_AgencyProto_BaseGun_h_43_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	AgencyProto_Source_AgencyProto_BaseGun_h_27_PRIVATE_PROPERTY_OFFSET \
-	AgencyProto_Source_AgencyProto_BaseGun_h_27_RPC_WRAPPERS_NO_PURE_DECLS \
-	AgencyProto_Source_AgencyProto_BaseGun_h_27_INCLASS_NO_PURE_DECLS \
-	AgencyProto_Source_AgencyProto_BaseGun_h_27_ENHANCED_CONSTRUCTORS \
+	AgencyProto_Source_AgencyProto_BaseGun_h_43_PRIVATE_PROPERTY_OFFSET \
+	AgencyProto_Source_AgencyProto_BaseGun_h_43_RPC_WRAPPERS_NO_PURE_DECLS \
+	AgencyProto_Source_AgencyProto_BaseGun_h_43_INCLASS_NO_PURE_DECLS \
+	AgencyProto_Source_AgencyProto_BaseGun_h_43_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-template<> AGENCYPROTO_API UClass* StaticClass<class UBaseGun>();
+template<> AGENCYPROTO_API UClass* StaticClass<class ABaseGun>();
 
 #undef CURRENT_FILE_ID
 #define CURRENT_FILE_ID AgencyProto_Source_AgencyProto_BaseGun_h
