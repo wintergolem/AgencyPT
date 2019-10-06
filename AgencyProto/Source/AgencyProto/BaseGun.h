@@ -9,32 +9,20 @@
 #include "GameFramework/Character.h"
 #include "Components/SkeletalMeshComponent.h"
 #include "Engine/SkeletalMesh.h"
+#include "Math/Vector.h"
 #include "BaseGun.generated.h"
-
-USTRUCT(BlueprintType)
-struct FAmmoBagStruct
-{
-	GENERATED_BODY()
-
-	UPROPERTY(BlueprintReadWrite)
-	int32 AmmoClipSize = 0;
-	UPROPERTY(BlueprintReadWrite)
-	int32 AmmoClipCurrent = 0;
-	UPROPERTY(BlueprintReadWrite)
-	int32 AmmoTotalCarried = 0;
-	UPROPERTY(BlueprintReadWrite)
-	int32 AmmoTotalCanCarry = 0;
-};
 
 USTRUCT(BlueprintType)
 struct FShotVariableWeighted
 {
     GENERATED_BODY()
-
+    FShotVariableWeighted();
+    FShotVariableWeighted( float InWeight, float InDistance);
+    
     UPROPERTY(BlueprintReadWrite)
-    int32 Weight = 0;
+    float Weight = 0;
     UPROPERTY(BlueprintReadWrite)
-    float Angle = 0;
+    float Distance = 0;
 };
 
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
@@ -84,30 +72,41 @@ public:
     float ReloadTimeInSeconds = 0.f;
     
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
-    FAmmoBagStruct AmmoBag;
+    int32 AmmoClipSize = 0;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    int32 AmmoClipCurrent = 0;
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    int32 AmmoTotalCarried = 0; //doesn't not include what's in the clip
+    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    int32 AmmoTotalCanCarry = 0;
     
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
-    TArray<FShotVariableWeighted> HipFireShotVariables;
+    TArray<float> ShotVariableDistances;
     
     UPROPERTY(EditAnywhere, BlueprintReadWrite)
-    TArray<FShotVariableWeighted> ADSShotVariables;
+    TArray<float> ShotVariableWeights;
     
-    UPROPERTY(EditAnywhere, BlueprintReadWrite)
+    UPROPERTY(BlueprintReadWrite)
     bool ADSActive = false;
     
-    TArray<float> AShotAngles;
+    TArray<FVector> AShotAngles;
     
     void SetADS(bool IsADSActive);
     
     UFUNCTION(BlueprintCallable)
-    void TriggerPull();
+    bool TriggerPull();
+    UFUNCTION(BlueprintCallable)
+    void Reload();
     
     void CalcShotAngles();
     
 private:
     float HipFireMaxWeight = 0;
-    float ADSMaxWeight = 0;
     bool AbleToFire = true;
     float ReloadTimer = 0;
+    
+    TArray<FShotVariableWeighted> HipFireShotVariables;
+    
+    void FireBullet( FVector Adjustment);
 
 };

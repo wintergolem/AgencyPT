@@ -15,10 +15,10 @@ void EmptyLinkFunctionForGeneratedCodeBaseGun() {}
 // Cross Module References
 	AGENCYPROTO_API UScriptStruct* Z_Construct_UScriptStruct_FShotVariableWeighted();
 	UPackage* Z_Construct_UPackage__Script_AgencyProto();
-	AGENCYPROTO_API UScriptStruct* Z_Construct_UScriptStruct_FAmmoBagStruct();
 	AGENCYPROTO_API UClass* Z_Construct_UClass_ABaseGun_NoRegister();
 	AGENCYPROTO_API UClass* Z_Construct_UClass_ABaseGun();
 	ENGINE_API UClass* Z_Construct_UClass_AActor();
+	AGENCYPROTO_API UFunction* Z_Construct_UFunction_ABaseGun_Reload();
 	AGENCYPROTO_API UFunction* Z_Construct_UFunction_ABaseGun_TriggerPull();
 	ENGINE_API UClass* Z_Construct_UClass_USkeletalMeshComponent_NoRegister();
 	ENGINE_API UClass* Z_Construct_UClass_USkeletalMesh_NoRegister();
@@ -55,13 +55,13 @@ static struct FScriptStruct_AgencyProto_StaticRegisterNativesFShotVariableWeight
 #endif
 		static void* NewStructOps();
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Angle_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Distance_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Angle;
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Distance;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Weight_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_Weight;
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Weight;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const UE4CodeGen_Private::FStructParams ReturnStructParams;
 	};
@@ -76,21 +76,21 @@ static struct FScriptStruct_AgencyProto_StaticRegisterNativesFShotVariableWeight
 		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FShotVariableWeighted>();
 	}
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FShotVariableWeighted_Statics::NewProp_Angle_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FShotVariableWeighted_Statics::NewProp_Distance_MetaData[] = {
 		{ "Category", "ShotVariableWeighted" },
 		{ "ModuleRelativePath", "BaseGun.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UScriptStruct_FShotVariableWeighted_Statics::NewProp_Angle = { "Angle", nullptr, (EPropertyFlags)0x0010000000000004, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FShotVariableWeighted, Angle), METADATA_PARAMS(Z_Construct_UScriptStruct_FShotVariableWeighted_Statics::NewProp_Angle_MetaData, ARRAY_COUNT(Z_Construct_UScriptStruct_FShotVariableWeighted_Statics::NewProp_Angle_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UScriptStruct_FShotVariableWeighted_Statics::NewProp_Distance = { "Distance", nullptr, (EPropertyFlags)0x0010000000000004, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FShotVariableWeighted, Distance), METADATA_PARAMS(Z_Construct_UScriptStruct_FShotVariableWeighted_Statics::NewProp_Distance_MetaData, ARRAY_COUNT(Z_Construct_UScriptStruct_FShotVariableWeighted_Statics::NewProp_Distance_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FShotVariableWeighted_Statics::NewProp_Weight_MetaData[] = {
 		{ "Category", "ShotVariableWeighted" },
 		{ "ModuleRelativePath", "BaseGun.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FShotVariableWeighted_Statics::NewProp_Weight = { "Weight", nullptr, (EPropertyFlags)0x0010000000000004, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FShotVariableWeighted, Weight), METADATA_PARAMS(Z_Construct_UScriptStruct_FShotVariableWeighted_Statics::NewProp_Weight_MetaData, ARRAY_COUNT(Z_Construct_UScriptStruct_FShotVariableWeighted_Statics::NewProp_Weight_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UScriptStruct_FShotVariableWeighted_Statics::NewProp_Weight = { "Weight", nullptr, (EPropertyFlags)0x0010000000000004, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FShotVariableWeighted, Weight), METADATA_PARAMS(Z_Construct_UScriptStruct_FShotVariableWeighted_Statics::NewProp_Weight_MetaData, ARRAY_COUNT(Z_Construct_UScriptStruct_FShotVariableWeighted_Statics::NewProp_Weight_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FShotVariableWeighted_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FShotVariableWeighted_Statics::NewProp_Angle,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FShotVariableWeighted_Statics::NewProp_Distance,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FShotVariableWeighted_Statics::NewProp_Weight,
 	};
 	const UE4CodeGen_Private::FStructParams Z_Construct_UScriptStruct_FShotVariableWeighted_Statics::ReturnStructParams = {
@@ -121,136 +121,17 @@ static struct FScriptStruct_AgencyProto_StaticRegisterNativesFShotVariableWeight
 		}
 		return ReturnStruct;
 	}
-	uint32 Get_Z_Construct_UScriptStruct_FShotVariableWeighted_Hash() { return 558361682U; }
-class UScriptStruct* FAmmoBagStruct::StaticStruct()
-{
-	static class UScriptStruct* Singleton = NULL;
-	if (!Singleton)
-	{
-		extern AGENCYPROTO_API uint32 Get_Z_Construct_UScriptStruct_FAmmoBagStruct_Hash();
-		Singleton = GetStaticStruct(Z_Construct_UScriptStruct_FAmmoBagStruct, Z_Construct_UPackage__Script_AgencyProto(), TEXT("AmmoBagStruct"), sizeof(FAmmoBagStruct), Get_Z_Construct_UScriptStruct_FAmmoBagStruct_Hash());
-	}
-	return Singleton;
-}
-template<> AGENCYPROTO_API UScriptStruct* StaticStruct<FAmmoBagStruct>()
-{
-	return FAmmoBagStruct::StaticStruct();
-}
-static FCompiledInDeferStruct Z_CompiledInDeferStruct_UScriptStruct_FAmmoBagStruct(FAmmoBagStruct::StaticStruct, TEXT("/Script/AgencyProto"), TEXT("AmmoBagStruct"), false, nullptr, nullptr);
-static struct FScriptStruct_AgencyProto_StaticRegisterNativesFAmmoBagStruct
-{
-	FScriptStruct_AgencyProto_StaticRegisterNativesFAmmoBagStruct()
-	{
-		UScriptStruct::DeferCppStructOps(FName(TEXT("AmmoBagStruct")),new UScriptStruct::TCppStructOps<FAmmoBagStruct>);
-	}
-} ScriptStruct_AgencyProto_StaticRegisterNativesFAmmoBagStruct;
-	struct Z_Construct_UScriptStruct_FAmmoBagStruct_Statics
-	{
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam Struct_MetaDataParams[];
-#endif
-		static void* NewStructOps();
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AmmoTotalCanCarry_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_AmmoTotalCanCarry;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AmmoTotalCarried_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_AmmoTotalCarried;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AmmoClipCurrent_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_AmmoClipCurrent;
-#if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AmmoClipSize_MetaData[];
-#endif
-		static const UE4CodeGen_Private::FIntPropertyParams NewProp_AmmoClipSize;
-		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
-		static const UE4CodeGen_Private::FStructParams ReturnStructParams;
-	};
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FAmmoBagStruct_Statics::Struct_MetaDataParams[] = {
-		{ "BlueprintType", "true" },
-		{ "ModuleRelativePath", "BaseGun.h" },
-	};
-#endif
-	void* Z_Construct_UScriptStruct_FAmmoBagStruct_Statics::NewStructOps()
-	{
-		return (UScriptStruct::ICppStructOps*)new UScriptStruct::TCppStructOps<FAmmoBagStruct>();
-	}
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FAmmoBagStruct_Statics::NewProp_AmmoTotalCanCarry_MetaData[] = {
-		{ "Category", "AmmoBagStruct" },
-		{ "ModuleRelativePath", "BaseGun.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FAmmoBagStruct_Statics::NewProp_AmmoTotalCanCarry = { "AmmoTotalCanCarry", nullptr, (EPropertyFlags)0x0010000000000004, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FAmmoBagStruct, AmmoTotalCanCarry), METADATA_PARAMS(Z_Construct_UScriptStruct_FAmmoBagStruct_Statics::NewProp_AmmoTotalCanCarry_MetaData, ARRAY_COUNT(Z_Construct_UScriptStruct_FAmmoBagStruct_Statics::NewProp_AmmoTotalCanCarry_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FAmmoBagStruct_Statics::NewProp_AmmoTotalCarried_MetaData[] = {
-		{ "Category", "AmmoBagStruct" },
-		{ "ModuleRelativePath", "BaseGun.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FAmmoBagStruct_Statics::NewProp_AmmoTotalCarried = { "AmmoTotalCarried", nullptr, (EPropertyFlags)0x0010000000000004, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FAmmoBagStruct, AmmoTotalCarried), METADATA_PARAMS(Z_Construct_UScriptStruct_FAmmoBagStruct_Statics::NewProp_AmmoTotalCarried_MetaData, ARRAY_COUNT(Z_Construct_UScriptStruct_FAmmoBagStruct_Statics::NewProp_AmmoTotalCarried_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FAmmoBagStruct_Statics::NewProp_AmmoClipCurrent_MetaData[] = {
-		{ "Category", "AmmoBagStruct" },
-		{ "ModuleRelativePath", "BaseGun.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FAmmoBagStruct_Statics::NewProp_AmmoClipCurrent = { "AmmoClipCurrent", nullptr, (EPropertyFlags)0x0010000000000004, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FAmmoBagStruct, AmmoClipCurrent), METADATA_PARAMS(Z_Construct_UScriptStruct_FAmmoBagStruct_Statics::NewProp_AmmoClipCurrent_MetaData, ARRAY_COUNT(Z_Construct_UScriptStruct_FAmmoBagStruct_Statics::NewProp_AmmoClipCurrent_MetaData)) };
-#if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UScriptStruct_FAmmoBagStruct_Statics::NewProp_AmmoClipSize_MetaData[] = {
-		{ "Category", "AmmoBagStruct" },
-		{ "ModuleRelativePath", "BaseGun.h" },
-	};
-#endif
-	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UScriptStruct_FAmmoBagStruct_Statics::NewProp_AmmoClipSize = { "AmmoClipSize", nullptr, (EPropertyFlags)0x0010000000000004, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(FAmmoBagStruct, AmmoClipSize), METADATA_PARAMS(Z_Construct_UScriptStruct_FAmmoBagStruct_Statics::NewProp_AmmoClipSize_MetaData, ARRAY_COUNT(Z_Construct_UScriptStruct_FAmmoBagStruct_Statics::NewProp_AmmoClipSize_MetaData)) };
-	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UScriptStruct_FAmmoBagStruct_Statics::PropPointers[] = {
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FAmmoBagStruct_Statics::NewProp_AmmoTotalCanCarry,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FAmmoBagStruct_Statics::NewProp_AmmoTotalCarried,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FAmmoBagStruct_Statics::NewProp_AmmoClipCurrent,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UScriptStruct_FAmmoBagStruct_Statics::NewProp_AmmoClipSize,
-	};
-	const UE4CodeGen_Private::FStructParams Z_Construct_UScriptStruct_FAmmoBagStruct_Statics::ReturnStructParams = {
-		(UObject* (*)())Z_Construct_UPackage__Script_AgencyProto,
-		nullptr,
-		&NewStructOps,
-		"AmmoBagStruct",
-		sizeof(FAmmoBagStruct),
-		alignof(FAmmoBagStruct),
-		Z_Construct_UScriptStruct_FAmmoBagStruct_Statics::PropPointers,
-		ARRAY_COUNT(Z_Construct_UScriptStruct_FAmmoBagStruct_Statics::PropPointers),
-		RF_Public|RF_Transient|RF_MarkAsNative,
-		EStructFlags(0x00000001),
-		METADATA_PARAMS(Z_Construct_UScriptStruct_FAmmoBagStruct_Statics::Struct_MetaDataParams, ARRAY_COUNT(Z_Construct_UScriptStruct_FAmmoBagStruct_Statics::Struct_MetaDataParams))
-	};
-	UScriptStruct* Z_Construct_UScriptStruct_FAmmoBagStruct()
-	{
-#if WITH_HOT_RELOAD
-		extern uint32 Get_Z_Construct_UScriptStruct_FAmmoBagStruct_Hash();
-		UPackage* Outer = Z_Construct_UPackage__Script_AgencyProto();
-		static UScriptStruct* ReturnStruct = FindExistingStructIfHotReloadOrDynamic(Outer, TEXT("AmmoBagStruct"), sizeof(FAmmoBagStruct), Get_Z_Construct_UScriptStruct_FAmmoBagStruct_Hash(), false);
-#else
-		static UScriptStruct* ReturnStruct = nullptr;
-#endif
-		if (!ReturnStruct)
-		{
-			UE4CodeGen_Private::ConstructUScriptStruct(ReturnStruct, Z_Construct_UScriptStruct_FAmmoBagStruct_Statics::ReturnStructParams);
-		}
-		return ReturnStruct;
-	}
-	uint32 Get_Z_Construct_UScriptStruct_FAmmoBagStruct_Hash() { return 939041441U; }
+	uint32 Get_Z_Construct_UScriptStruct_FShotVariableWeighted_Hash() { return 1916857306U; }
 	void ABaseGun::StaticRegisterNativesABaseGun()
 	{
 		UClass* Class = ABaseGun::StaticClass();
 		static const FNameNativePtrPair Funcs[] = {
+			{ "Reload", &ABaseGun::execReload },
 			{ "TriggerPull", &ABaseGun::execTriggerPull },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, ARRAY_COUNT(Funcs));
 	}
-	struct Z_Construct_UFunction_ABaseGun_TriggerPull_Statics
+	struct Z_Construct_UFunction_ABaseGun_Reload_Statics
 	{
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
@@ -258,11 +139,48 @@ static struct FScriptStruct_AgencyProto_StaticRegisterNativesFAmmoBagStruct
 		static const UE4CodeGen_Private::FFunctionParams FuncParams;
 	};
 #if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABaseGun_Reload_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "BaseGun.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ABaseGun_Reload_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABaseGun, nullptr, "Reload", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABaseGun_Reload_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_ABaseGun_Reload_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_ABaseGun_Reload()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_ABaseGun_Reload_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
+	struct Z_Construct_UFunction_ABaseGun_TriggerPull_Statics
+	{
+		struct BaseGun_eventTriggerPull_Parms
+		{
+			bool ReturnValue;
+		};
+		static void NewProp_ReturnValue_SetBit(void* Obj);
+		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ReturnValue;
+		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+	void Z_Construct_UFunction_ABaseGun_TriggerPull_Statics::NewProp_ReturnValue_SetBit(void* Obj)
+	{
+		((BaseGun_eventTriggerPull_Parms*)Obj)->ReturnValue = 1;
+	}
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UFunction_ABaseGun_TriggerPull_Statics::NewProp_ReturnValue = { "ReturnValue", nullptr, (EPropertyFlags)0x0010000000000580, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(BaseGun_eventTriggerPull_Parms), &Z_Construct_UFunction_ABaseGun_TriggerPull_Statics::NewProp_ReturnValue_SetBit, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UFunction_ABaseGun_TriggerPull_Statics::PropPointers[] = {
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UFunction_ABaseGun_TriggerPull_Statics::NewProp_ReturnValue,
+	};
+#if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_ABaseGun_TriggerPull_Statics::Function_MetaDataParams[] = {
 		{ "ModuleRelativePath", "BaseGun.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ABaseGun_TriggerPull_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABaseGun, nullptr, "TriggerPull", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABaseGun_TriggerPull_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_ABaseGun_TriggerPull_Statics::Function_MetaDataParams)) };
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_ABaseGun_TriggerPull_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_ABaseGun, nullptr, "TriggerPull", nullptr, nullptr, sizeof(BaseGun_eventTriggerPull_Parms), Z_Construct_UFunction_ABaseGun_TriggerPull_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_ABaseGun_TriggerPull_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_ABaseGun_TriggerPull_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_ABaseGun_TriggerPull_Statics::Function_MetaDataParams)) };
 	UFunction* Z_Construct_UFunction_ABaseGun_TriggerPull()
 	{
 		static UFunction* ReturnFunction = nullptr;
@@ -289,19 +207,31 @@ static struct FScriptStruct_AgencyProto_StaticRegisterNativesFAmmoBagStruct
 		static void NewProp_ADSActive_SetBit(void* Obj);
 		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_ADSActive;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ADSShotVariables_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ShotVariableWeights_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_ADSShotVariables;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_ADSShotVariables_Inner;
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_ShotVariableWeights;
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_ShotVariableWeights_Inner;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_HipFireShotVariables_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ShotVariableDistances_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_HipFireShotVariables;
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_HipFireShotVariables_Inner;
+		static const UE4CodeGen_Private::FArrayPropertyParams NewProp_ShotVariableDistances;
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_ShotVariableDistances_Inner;
 #if WITH_METADATA
-		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AmmoBag_MetaData[];
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AmmoTotalCanCarry_MetaData[];
 #endif
-		static const UE4CodeGen_Private::FStructPropertyParams NewProp_AmmoBag;
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_AmmoTotalCanCarry;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AmmoTotalCarried_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_AmmoTotalCarried;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AmmoClipCurrent_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_AmmoClipCurrent;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_AmmoClipSize_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_AmmoClipSize;
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ReloadTimeInSeconds_MetaData[];
 #endif
@@ -351,7 +281,8 @@ static struct FScriptStruct_AgencyProto_StaticRegisterNativesFAmmoBagStruct
 		(UObject* (*)())Z_Construct_UPackage__Script_AgencyProto,
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_ABaseGun_Statics::FuncInfo[] = {
-		{ &Z_Construct_UFunction_ABaseGun_TriggerPull, "TriggerPull" }, // 3874473986
+		{ &Z_Construct_UFunction_ABaseGun_Reload, "Reload" }, // 2858917005
+		{ &Z_Construct_UFunction_ABaseGun_TriggerPull, "TriggerPull" }, // 1168152204
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABaseGun_Statics::Class_MetaDataParams[] = {
@@ -371,30 +302,53 @@ static struct FScriptStruct_AgencyProto_StaticRegisterNativesFAmmoBagStruct
 	{
 		((ABaseGun*)Obj)->ADSActive = 1;
 	}
-	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ABaseGun_Statics::NewProp_ADSActive = { "ADSActive", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(ABaseGun), &Z_Construct_UClass_ABaseGun_Statics::NewProp_ADSActive_SetBit, METADATA_PARAMS(Z_Construct_UClass_ABaseGun_Statics::NewProp_ADSActive_MetaData, ARRAY_COUNT(Z_Construct_UClass_ABaseGun_Statics::NewProp_ADSActive_MetaData)) };
+	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_ABaseGun_Statics::NewProp_ADSActive = { "ADSActive", nullptr, (EPropertyFlags)0x0010000000000004, UE4CodeGen_Private::EPropertyGenFlags::Bool | UE4CodeGen_Private::EPropertyGenFlags::NativeBool, RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(bool), sizeof(ABaseGun), &Z_Construct_UClass_ABaseGun_Statics::NewProp_ADSActive_SetBit, METADATA_PARAMS(Z_Construct_UClass_ABaseGun_Statics::NewProp_ADSActive_MetaData, ARRAY_COUNT(Z_Construct_UClass_ABaseGun_Statics::NewProp_ADSActive_MetaData)) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABaseGun_Statics::NewProp_ADSShotVariables_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABaseGun_Statics::NewProp_ShotVariableWeights_MetaData[] = {
 		{ "Category", "BaseGun" },
 		{ "ModuleRelativePath", "BaseGun.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ABaseGun_Statics::NewProp_ADSShotVariables = { "ADSShotVariables", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABaseGun, ADSShotVariables), METADATA_PARAMS(Z_Construct_UClass_ABaseGun_Statics::NewProp_ADSShotVariables_MetaData, ARRAY_COUNT(Z_Construct_UClass_ABaseGun_Statics::NewProp_ADSShotVariables_MetaData)) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_ABaseGun_Statics::NewProp_ADSShotVariables_Inner = { "ADSShotVariables", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FShotVariableWeighted, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ABaseGun_Statics::NewProp_ShotVariableWeights = { "ShotVariableWeights", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABaseGun, ShotVariableWeights), METADATA_PARAMS(Z_Construct_UClass_ABaseGun_Statics::NewProp_ShotVariableWeights_MetaData, ARRAY_COUNT(Z_Construct_UClass_ABaseGun_Statics::NewProp_ShotVariableWeights_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABaseGun_Statics::NewProp_ShotVariableWeights_Inner = { "ShotVariableWeights", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABaseGun_Statics::NewProp_HipFireShotVariables_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABaseGun_Statics::NewProp_ShotVariableDistances_MetaData[] = {
 		{ "Category", "BaseGun" },
 		{ "ModuleRelativePath", "BaseGun.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ABaseGun_Statics::NewProp_HipFireShotVariables = { "HipFireShotVariables", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABaseGun, HipFireShotVariables), METADATA_PARAMS(Z_Construct_UClass_ABaseGun_Statics::NewProp_HipFireShotVariables_MetaData, ARRAY_COUNT(Z_Construct_UClass_ABaseGun_Statics::NewProp_HipFireShotVariables_MetaData)) };
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_ABaseGun_Statics::NewProp_HipFireShotVariables_Inner = { "HipFireShotVariables", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, Z_Construct_UScriptStruct_FShotVariableWeighted, METADATA_PARAMS(nullptr, 0) };
+	const UE4CodeGen_Private::FArrayPropertyParams Z_Construct_UClass_ABaseGun_Statics::NewProp_ShotVariableDistances = { "ShotVariableDistances", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Array, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABaseGun, ShotVariableDistances), METADATA_PARAMS(Z_Construct_UClass_ABaseGun_Statics::NewProp_ShotVariableDistances_MetaData, ARRAY_COUNT(Z_Construct_UClass_ABaseGun_Statics::NewProp_ShotVariableDistances_MetaData)) };
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_ABaseGun_Statics::NewProp_ShotVariableDistances_Inner = { "ShotVariableDistances", nullptr, (EPropertyFlags)0x0000000000000000, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, 0, METADATA_PARAMS(nullptr, 0) };
 #if WITH_METADATA
-	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABaseGun_Statics::NewProp_AmmoBag_MetaData[] = {
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABaseGun_Statics::NewProp_AmmoTotalCanCarry_MetaData[] = {
+		{ "Category", "BaseGun" },
+		{ "Comment", "//doesn't not include what's in the clip\n" },
+		{ "ModuleRelativePath", "BaseGun.h" },
+		{ "ToolTip", "doesn't not include what's in the clip" },
+	};
+#endif
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_ABaseGun_Statics::NewProp_AmmoTotalCanCarry = { "AmmoTotalCanCarry", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABaseGun, AmmoTotalCanCarry), METADATA_PARAMS(Z_Construct_UClass_ABaseGun_Statics::NewProp_AmmoTotalCanCarry_MetaData, ARRAY_COUNT(Z_Construct_UClass_ABaseGun_Statics::NewProp_AmmoTotalCanCarry_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABaseGun_Statics::NewProp_AmmoTotalCarried_MetaData[] = {
 		{ "Category", "BaseGun" },
 		{ "ModuleRelativePath", "BaseGun.h" },
 	};
 #endif
-	const UE4CodeGen_Private::FStructPropertyParams Z_Construct_UClass_ABaseGun_Statics::NewProp_AmmoBag = { "AmmoBag", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Struct, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABaseGun, AmmoBag), Z_Construct_UScriptStruct_FAmmoBagStruct, METADATA_PARAMS(Z_Construct_UClass_ABaseGun_Statics::NewProp_AmmoBag_MetaData, ARRAY_COUNT(Z_Construct_UClass_ABaseGun_Statics::NewProp_AmmoBag_MetaData)) };
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_ABaseGun_Statics::NewProp_AmmoTotalCarried = { "AmmoTotalCarried", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABaseGun, AmmoTotalCarried), METADATA_PARAMS(Z_Construct_UClass_ABaseGun_Statics::NewProp_AmmoTotalCarried_MetaData, ARRAY_COUNT(Z_Construct_UClass_ABaseGun_Statics::NewProp_AmmoTotalCarried_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABaseGun_Statics::NewProp_AmmoClipCurrent_MetaData[] = {
+		{ "Category", "BaseGun" },
+		{ "ModuleRelativePath", "BaseGun.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_ABaseGun_Statics::NewProp_AmmoClipCurrent = { "AmmoClipCurrent", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABaseGun, AmmoClipCurrent), METADATA_PARAMS(Z_Construct_UClass_ABaseGun_Statics::NewProp_AmmoClipCurrent_MetaData, ARRAY_COUNT(Z_Construct_UClass_ABaseGun_Statics::NewProp_AmmoClipCurrent_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABaseGun_Statics::NewProp_AmmoClipSize_MetaData[] = {
+		{ "Category", "BaseGun" },
+		{ "ModuleRelativePath", "BaseGun.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_ABaseGun_Statics::NewProp_AmmoClipSize = { "AmmoClipSize", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABaseGun, AmmoClipSize), METADATA_PARAMS(Z_Construct_UClass_ABaseGun_Statics::NewProp_AmmoClipSize_MetaData, ARRAY_COUNT(Z_Construct_UClass_ABaseGun_Statics::NewProp_AmmoClipSize_MetaData)) };
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_ABaseGun_Statics::NewProp_ReloadTimeInSeconds_MetaData[] = {
 		{ "Category", "BaseGun" },
@@ -471,11 +425,14 @@ static struct FScriptStruct_AgencyProto_StaticRegisterNativesFAmmoBagStruct
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_ABaseGun_Statics::NewProp_Camera = { "Camera", nullptr, (EPropertyFlags)0x001000000008000d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(ABaseGun, Camera), Z_Construct_UClass_UCameraComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_ABaseGun_Statics::NewProp_Camera_MetaData, ARRAY_COUNT(Z_Construct_UClass_ABaseGun_Statics::NewProp_Camera_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_ABaseGun_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseGun_Statics::NewProp_ADSActive,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseGun_Statics::NewProp_ADSShotVariables,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseGun_Statics::NewProp_ADSShotVariables_Inner,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseGun_Statics::NewProp_HipFireShotVariables,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseGun_Statics::NewProp_HipFireShotVariables_Inner,
-		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseGun_Statics::NewProp_AmmoBag,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseGun_Statics::NewProp_ShotVariableWeights,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseGun_Statics::NewProp_ShotVariableWeights_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseGun_Statics::NewProp_ShotVariableDistances,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseGun_Statics::NewProp_ShotVariableDistances_Inner,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseGun_Statics::NewProp_AmmoTotalCanCarry,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseGun_Statics::NewProp_AmmoTotalCarried,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseGun_Statics::NewProp_AmmoClipCurrent,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseGun_Statics::NewProp_AmmoClipSize,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseGun_Statics::NewProp_ReloadTimeInSeconds,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseGun_Statics::NewProp_BulletsPerTriggerPull,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_ABaseGun_Statics::NewProp_BulletsPerSecond,
@@ -514,7 +471,7 @@ static struct FScriptStruct_AgencyProto_StaticRegisterNativesFAmmoBagStruct
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(ABaseGun, 3108064780);
+	IMPLEMENT_CLASS(ABaseGun, 2700802047);
 	template<> AGENCYPROTO_API UClass* StaticClass<ABaseGun>()
 	{
 		return ABaseGun::StaticClass();

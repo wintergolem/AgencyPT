@@ -5,14 +5,20 @@
 #include "Math/UnrealMathUtility.h"
 #include "DrawDebugHelpers.h"
 
+FShotVariableWeighted::FShotVariableWeighted(){}
+FShotVariableWeighted::FShotVariableWeighted( float InWeight, float InDistance)
+{
+    Weight = InWeight;
+    Distance = InDistance;
+}
 
 // Sets default values for this component's properties
 ABaseGun::ABaseGun()
 {
-    AmmoBag.AmmoClipCurrent = 10;
-    AmmoBag.AmmoClipSize = 10;
-    AmmoBag.AmmoTotalCanCarry = 200;
-    AmmoBag.AmmoTotalCarried = 200;
+     AmmoClipCurrent = 10;
+     AmmoClipSize = 10;
+     AmmoTotalCanCarry = 200;
+     AmmoTotalCarried = 200;
 
     BulletsPerSecond = 10;
     BulletsPerTriggerPull = 0; //no limit
@@ -20,18 +26,6 @@ ABaseGun::ABaseGun()
     GunName = "NOCL 96";
     
     PrimaryActorTick.bCanEverTick = true;
-    
-    HipFireShotVariables.Sort([](const FShotVariableWeighted& LHS, const FShotVariableWeighted& RHS){ return LHS.Angle > RHS.Angle;});
-    ADSShotVariables.Sort([](const FShotVariableWeighted& LHS, const FShotVariableWeighted& RHS){ return LHS.Angle > RHS.Angle;});
-    
-    for( int i = 0 ; i < HipFireShotVariables.Num() ; ++i)
-    {
-        HipFireMaxWeight += HipFireShotVariables[i].Weight;
-    }
-    for( int i = 0 ; i < ADSShotVariables.Num() ; ++i)
-    {
-        ADSMaxWeight += ADSShotVariables[i].Weight;
-    }
     
 }
 
@@ -45,7 +39,19 @@ void ABaseGun::BeginPlay()
     {
         FP_Gun->SetSkeletalMesh(GunMesh);
     }
-	
+    for (int i = 0; i < ShotVariableDistances.Num() && i < ShotVariableWeights.Num() ; ++i)
+    {
+        HipFireShotVariables.Add( FShotVariableWeighted( ShotVariableWeights[i], ShotVariableDistances[i] ));
+    }
+    
+    HipFireShotVariables.Sort([](const FShotVariableWeighted& LHS, const FShotVariableWeighted& RHS){ return LHS.Distance > RHS.Distance;});
+    
+    for( int i = 0 ; i < HipFireShotVariables.Num() ; ++i)
+    {
+        HipFireMaxWeight += HipFireShotVariables[i].Weight;
+    }
+    
+    CalcShotAngles();
 }
 
 
@@ -64,29 +70,37 @@ void ABaseGun::SetADS(bool IsADSActive)
     
 }
 
-void ABaseGun::TriggerPull()
+bool ABaseGun::TriggerPull() //return whether or not a bullet will be fired
 {
-    if( AmmoBag.AmmoClipCurrent <= 0)
+    if( !( AmmoClipCurrent > 0) )
     {
-        return;
+        return false;
     }
     
     if( !Camera )
     {
         UE_LOG(LogTemp, Warning, TEXT("Camera is null"));
-        return;
+        return false;
     }
     if( !FP_Gun )
     {
         UE_LOG(LogTemp, Warning, TEXT("FP_Gun is null"));
-        return;
+        return false;
     }
     
+    FVector Adjustment = AShotAngles.Num() > 0 ? AShotAngles.Pop() : FVector::ZeroVector;
+    FireBullet( Adjustment );
+    return true;
+}
+
+void ABaseGun::FireBullet(FVector Adjustment )
+{
+     AmmoClipCurrent--;
     FHitResult OutHit;
     FVector Start = FP_Gun->GetComponentLocation();
     
     FVector ForwardVector = Camera->GetForwardVector();
-    FVector End = ((ForwardVector * 1000.f) + Camera->GetComponentLocation());
+    FVector End = ((ForwardVector * 1000.f) + Camera->GetComponentLocation()) + Adjustment;
     FCollisionQueryParams CollisionParams;
     
     DrawDebugLine(GetWorld(), Start, End, FColor::Green, false, 1 , 0 , 1);
@@ -111,17 +125,49 @@ void ABaseGun::TriggerPull()
 
 void ABaseGun::CalcShotAngles()
 {
+    if( HipFireMaxWeight <= 0 || HipFireShotVariables.Num() == 0)
+    {
+        return;
+    }
     float RN = FMath::FRandRange(0, HipFireMaxWeight);
     
-    for(int i = 0 ;  i < AmmoBag.AmmoClipSize ; ++i)
+    for(int J = 0 ;  J <  AmmoTotalCarried ; ++J)
     {
-        if( RN != HipFireShotVariables[i].Weight)
+        for(int i = 0 ;  i <  HipFireShotVariables.Num() ; ++i)
         {
-            RN -= HipFireShotVariables[i].Weight;
-        }
-        else
-        {
-            AShotAngles.Add(FMath::RandRange(HipFireShotVariables[i-1].Angle, HipFireShotVariables[i].Angle));
+            if( RN > HipFireShotVariables[i].Weight)
+            {
+                RN -= HipFireShotVariables[i].Weight;
+            }
+            else
+            {
+                float minDistance = i > 0 ? HipFireShotVariables[i-1].Distance : 0;
+                float maxDistance = HipFireShotVariables[i].Distance;
+            
+                FVector ToSave;
+                ToSave.X = FMath::RandRange(minDistance, maxDistance);
+                ToSave.Y = FMath::RandRange(minDistance, maxDistance);
+                ToSave.Z = FMath::RandRange(minDistance, maxDistance);
+                AShotAngles.Add(ToSave);
+                continue;
+            }
         }
     }
+}
+void ABaseGun::Reload()
+{
+    //blueprint will deal with the delay and animation
+    
+    int need = AmmoClipSize - AmmoClipCurrent;
+    if( AmmoTotalCarried >= need)
+    {
+        AmmoTotalCarried -= need;
+        AmmoClipCurrent = AmmoClipSize;
+    }
+    else
+    {
+        AmmoClipCurrent += AmmoTotalCarried;
+        AmmoTotalCarried = 0;
+    }
+    
 }

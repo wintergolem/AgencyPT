@@ -13,43 +13,52 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define AGENCYPROTO_BaseGun_generated_h
 
-#define AgencyProto_Source_AgencyProto_BaseGun_h_32_GENERATED_BODY \
+#define AgencyProto_Source_AgencyProto_BaseGun_h_18_GENERATED_BODY \
 	friend struct Z_Construct_UScriptStruct_FShotVariableWeighted_Statics; \
 	AGENCYPROTO_API static class UScriptStruct* StaticStruct();
 
 
 template<> AGENCYPROTO_API UScriptStruct* StaticStruct<struct FShotVariableWeighted>();
 
-#define AgencyProto_Source_AgencyProto_BaseGun_h_17_GENERATED_BODY \
-	friend struct Z_Construct_UScriptStruct_FAmmoBagStruct_Statics; \
-	AGENCYPROTO_API static class UScriptStruct* StaticStruct();
-
-
-template<> AGENCYPROTO_API UScriptStruct* StaticStruct<struct FAmmoBagStruct>();
-
-#define AgencyProto_Source_AgencyProto_BaseGun_h_43_RPC_WRAPPERS \
+#define AgencyProto_Source_AgencyProto_BaseGun_h_31_RPC_WRAPPERS \
+ \
+	DECLARE_FUNCTION(execReload) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->Reload(); \
+		P_NATIVE_END; \
+	} \
  \
 	DECLARE_FUNCTION(execTriggerPull) \
 	{ \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		P_THIS->TriggerPull(); \
+		*(bool*)Z_Param__Result=P_THIS->TriggerPull(); \
 		P_NATIVE_END; \
 	}
 
 
-#define AgencyProto_Source_AgencyProto_BaseGun_h_43_RPC_WRAPPERS_NO_PURE_DECLS \
+#define AgencyProto_Source_AgencyProto_BaseGun_h_31_RPC_WRAPPERS_NO_PURE_DECLS \
+ \
+	DECLARE_FUNCTION(execReload) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->Reload(); \
+		P_NATIVE_END; \
+	} \
  \
 	DECLARE_FUNCTION(execTriggerPull) \
 	{ \
 		P_FINISH; \
 		P_NATIVE_BEGIN; \
-		P_THIS->TriggerPull(); \
+		*(bool*)Z_Param__Result=P_THIS->TriggerPull(); \
 		P_NATIVE_END; \
 	}
 
 
-#define AgencyProto_Source_AgencyProto_BaseGun_h_43_INCLASS_NO_PURE_DECLS \
+#define AgencyProto_Source_AgencyProto_BaseGun_h_31_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesABaseGun(); \
 	friend struct Z_Construct_UClass_ABaseGun_Statics; \
@@ -58,7 +67,7 @@ public: \
 	DECLARE_SERIALIZER(ABaseGun)
 
 
-#define AgencyProto_Source_AgencyProto_BaseGun_h_43_INCLASS \
+#define AgencyProto_Source_AgencyProto_BaseGun_h_31_INCLASS \
 private: \
 	static void StaticRegisterNativesABaseGun(); \
 	friend struct Z_Construct_UClass_ABaseGun_Statics; \
@@ -67,7 +76,7 @@ public: \
 	DECLARE_SERIALIZER(ABaseGun)
 
 
-#define AgencyProto_Source_AgencyProto_BaseGun_h_43_STANDARD_CONSTRUCTORS \
+#define AgencyProto_Source_AgencyProto_BaseGun_h_31_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API ABaseGun(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(ABaseGun) \
@@ -80,7 +89,7 @@ private: \
 public:
 
 
-#define AgencyProto_Source_AgencyProto_BaseGun_h_43_ENHANCED_CONSTRUCTORS \
+#define AgencyProto_Source_AgencyProto_BaseGun_h_31_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API ABaseGun(ABaseGun&&); \
@@ -91,26 +100,26 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(ABaseGun); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(ABaseGun)
 
 
-#define AgencyProto_Source_AgencyProto_BaseGun_h_43_PRIVATE_PROPERTY_OFFSET
-#define AgencyProto_Source_AgencyProto_BaseGun_h_40_PROLOG
-#define AgencyProto_Source_AgencyProto_BaseGun_h_43_GENERATED_BODY_LEGACY \
+#define AgencyProto_Source_AgencyProto_BaseGun_h_31_PRIVATE_PROPERTY_OFFSET
+#define AgencyProto_Source_AgencyProto_BaseGun_h_28_PROLOG
+#define AgencyProto_Source_AgencyProto_BaseGun_h_31_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	AgencyProto_Source_AgencyProto_BaseGun_h_43_PRIVATE_PROPERTY_OFFSET \
-	AgencyProto_Source_AgencyProto_BaseGun_h_43_RPC_WRAPPERS \
-	AgencyProto_Source_AgencyProto_BaseGun_h_43_INCLASS \
-	AgencyProto_Source_AgencyProto_BaseGun_h_43_STANDARD_CONSTRUCTORS \
+	AgencyProto_Source_AgencyProto_BaseGun_h_31_PRIVATE_PROPERTY_OFFSET \
+	AgencyProto_Source_AgencyProto_BaseGun_h_31_RPC_WRAPPERS \
+	AgencyProto_Source_AgencyProto_BaseGun_h_31_INCLASS \
+	AgencyProto_Source_AgencyProto_BaseGun_h_31_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define AgencyProto_Source_AgencyProto_BaseGun_h_43_GENERATED_BODY \
+#define AgencyProto_Source_AgencyProto_BaseGun_h_31_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	AgencyProto_Source_AgencyProto_BaseGun_h_43_PRIVATE_PROPERTY_OFFSET \
-	AgencyProto_Source_AgencyProto_BaseGun_h_43_RPC_WRAPPERS_NO_PURE_DECLS \
-	AgencyProto_Source_AgencyProto_BaseGun_h_43_INCLASS_NO_PURE_DECLS \
-	AgencyProto_Source_AgencyProto_BaseGun_h_43_ENHANCED_CONSTRUCTORS \
+	AgencyProto_Source_AgencyProto_BaseGun_h_31_PRIVATE_PROPERTY_OFFSET \
+	AgencyProto_Source_AgencyProto_BaseGun_h_31_RPC_WRAPPERS_NO_PURE_DECLS \
+	AgencyProto_Source_AgencyProto_BaseGun_h_31_INCLASS_NO_PURE_DECLS \
+	AgencyProto_Source_AgencyProto_BaseGun_h_31_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
