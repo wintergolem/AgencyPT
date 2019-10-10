@@ -88,7 +88,7 @@ bool ABaseGun::TriggerPull() //return whether or not a bullet will be fired
         return false;
     }
     
-    FVector Adjustment = AShotAngles.Num() > 0 ? AShotAngles.Pop() : FVector::ZeroVector;
+    FVector Adjustment = SetNegative( AShotAngles.Num() > 0 ? AShotAngles.Pop() : FVector::ZeroVector );
     FireBullet( Adjustment );
     return true;
 }
@@ -170,4 +170,21 @@ void ABaseGun::Reload()
         AmmoTotalCarried = 0;
     }
     
+}
+
+FVector ABaseGun::SetNegative( FVector Adjustment)
+{
+    if ( (int)(Adjustment.X) % 2 == 0)
+    {
+        Adjustment.X *= -1;
+    }
+    if ( (int)(Adjustment.Y) % 2 == 0)
+    {
+        Adjustment.Y *= -1;
+    }
+    if ( (int)(Adjustment.Z) % 2 == 0)
+    {
+        Adjustment.Z *= -1;
+    }
+    return Adjustment;
 }

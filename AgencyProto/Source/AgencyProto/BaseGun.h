@@ -109,4 +109,5 @@ private:
     
     void FireBullet( FVector Adjustment);
 
+    FVector SetNegative( FVector Adjustment);
 };
